@@ -46,7 +46,7 @@ Route::middleware('auth')->group(function () {
         ->middleware('role:teacher')
         ->name('course.course_students.create'); // form create student
 
-        Route::get('/courses/students/save/{course}', [CourseStudentController::class, 'store'])
+        Route::post('/courses/students/save/{course}', [CourseStudentController::class, 'store'])
         ->middleware('role:teacher')
         ->name('course.course_students.store'); // save data student
 
