@@ -11,7 +11,7 @@
         <div id="sidebar" class="w-[270px] flex flex-col shrink-0 min-h-screen justify-between p-[30px] border-r border-[#EEEEEE] bg-[#FBFBFB]">
             <div class="w-full flex flex-col gap-[30px]">
                 <a href="index.html" class="flex items-center justify-center">
-                    <img src="{{asset('images/logo/logo.svg')}}" alt="logo">
+                    <img src="{{asset('images/logo/mds-circle-logo.png')}}" alt="logo">
                 </a>
                 <ul class="flex flex-col gap-3">
                     <li>
@@ -214,7 +214,7 @@
             <div id="course-test" class="mx-[70px] w-[870px] mt-[30px]">
                 <h2 class="font-bold text-2xl">Course Tests</h2>
                 <div class="flex flex-col gap-[30px] mt-2">
-                    <a href="add-question.html" class="w-full h-[92px] flex items-center justify-center p-4 border-dashed border-2 border-[#0A090B] rounded-[20px]">
+                    <a href="{{route('dashboard.course.create.question', $course)}}" class="w-full h-[92px] flex items-center justify-center p-4 border-dashed border-2 border-[#0A090B] rounded-[20px]">
                         <div class="flex items-center gap-5">
                             <div>
                                 <img src="{{asset('images/icons/note-add.svg')}}" alt="icon">
@@ -222,48 +222,27 @@
                             <p class="font-bold text-xl">New Question</p>
                         </div>
                     </a>
-                    <div class="question-card w-full flex items-center justify-between p-4 border border-[#EEEEEE] rounded-[20px]">
-                        <div class="flex flex-col gap-[6px]">
-                            <p class="text-[#7F8190]">Question</p>
-                            <p class="font-bold text-xl">Why do we need to do marketing?</p>
+                    @forelse ($questions as $question)
+                        <div class="question-card w-full flex items-center justify-between p-4 border border-[#EEEEEE] rounded-[20px]">
+                            <div class="flex flex-col gap-[6px]">
+                                <p class="text-[#7F8190]">Question</p>
+                                <p class="font-bold text-xl">{{$question->question}}</p>
+                            </div>
+                            <div class="flex items-center gap-[14px]">
+                                <a href="{{route('dashboard.course_questions.edit', $question)}}" class="bg-[#0A090B] p-[14px_30px] rounded-full text-white font-semibold">Edit</a>
+                                <form method="POST" action="{{route('dashboard.course_questions.destroy', $question)}}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="w-[52px] h-[52px] flex shrink-0 items-center justify-center rounded-full bg-[#FD445E]">
+                                        <img src="{{asset('images/icons/trash.svg')}}" alt="icon">
+                                    </button>
+                                </form>
+                            </div>
                         </div>
-                        <div class="flex items-center gap-[14px]">
-                            <a href="#" class="bg-[#0A090B] p-[14px_30px] rounded-full text-white font-semibold">Edit</a>
-                            <form action="">
-                                <button class="w-[52px] h-[52px] flex shrink-0 items-center justify-center rounded-full bg-[#FD445E]">
-                                    <img src="{{asset('images/icons/trash.svg')}}" alt="icon">
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="question-card w-full flex items-center justify-between p-4 border border-[#EEEEEE] rounded-[20px]">
-                        <div class="flex flex-col gap-[6px]">
-                            <p class="text-[#7F8190]">Question</p>
-                            <p class="font-bold text-xl">Why do we need to do marketing?</p>
-                        </div>
-                        <div class="flex items-center gap-[14px]">
-                            <a href="#" class="bg-[#0A090B] p-[14px_30px] rounded-full text-white font-semibold">Edit</a>
-                            <form action="">
-                                <button class="w-[52px] h-[52px] flex shrink-0 items-center justify-center rounded-full bg-[#FD445E]">
-                                    <img src="{{asset('images/icons/trash.svg')}}" alt="icon">
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="question-card w-full flex items-center justify-between p-4 border border-[#EEEEEE] rounded-[20px]">
-                        <div class="flex flex-col gap-[6px]">
-                            <p class="text-[#7F8190]">Question</p>
-                            <p class="font-bold text-xl">Why do we need to do marketing?</p>
-                        </div>
-                        <div class="flex items-center gap-[14px]">
-                            <a href="#" class="bg-[#0A090B] p-[14px_30px] rounded-full text-white font-semibold">Edit</a>
-                            <form action="">
-                                <button class="w-[52px] h-[52px] flex shrink-0 items-center justify-center rounded-full bg-[#FD445E]">
-                                    <img src="{{asset('images/icons/trash.svg')}}" alt="icon">
-                                </button>
-                            </form>
-                        </div>
-                    </div>
+                    @empty
+                        <p> No questions found </p>
+                    @endforelse
+
                 </div>
             </div>
         </div>

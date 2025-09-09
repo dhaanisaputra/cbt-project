@@ -27,15 +27,15 @@ Route::middleware('auth')->group(function () {
         Route::resource('courses', CourseController::class)
         ->middleware('role:teacher'); // only for teacher
 
-        Route::get('courses/question/create/{course}', [CourseQuestionController::class], 'create')
+        Route::get('courses/question/create/{course}', [CourseQuestionController::class, 'create'])
         ->middleware('role:teacher')
         ->name('course.create.question'); // form create question
 
-        Route::post('courses/question/save/{course}', [CourseQuestionController::class], 'store')
+        Route::post('courses/question/save/{course}', [CourseQuestionController::class, 'store'])
         ->middleware('role:teacher')
         ->name('course.create.question.store'); // save data question
 
-        Route::resource('courses_questions', CourseQuestionController::class)
+        Route::resource('course_questions', CourseQuestionController::class)
         ->middleware('role:teacher');
 
         Route::get('/courses/students/show/{course}', [CourseStudentController::class, 'index'])

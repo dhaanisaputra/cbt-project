@@ -11,7 +11,7 @@
         <div id="sidebar" class="w-[270px] flex flex-col shrink-0 min-h-screen justify-between p-[30px] border-r border-[#EEEEEE] bg-[#FBFBFB]">
             <div class="w-full flex flex-col gap-[30px]">
                 <a href="index.html" class="flex items-center justify-center">
-                    <img src="{{asset('images/logo/logo.svg')}}" alt="logo">
+                    <img src="{{asset('images/logo/mds-circle-logo.png')}}" alt="logo">
                 </a>
                 <ul class="flex flex-col gap-3">
                     <li>
@@ -144,13 +144,13 @@
                 <div class="breadcrumb flex items-center gap-[30px]">
                     <a href="#" class="text-[#7F8190] last:text-[#0A090B] last:font-semibold">Home</a>
                     <span class="text-[#7F8190] last:text-[#0A090B]">/</span>
-                    <a href="index.html" class="text-[#7F8190] last:text-[#0A090B] last:font-semibold">Manage Courses</a>
+                    <a href="{{route('dashboard.courses.index')}}" class="text-[#7F8190] last:text-[#0A090B] last:font-semibold">Manage Courses</a>
                     <span class="text-[#7F8190] last:text-[#0A090B]">/</span>
-                    <a href="#" class="text-[#7F8190] last:text-[#0A090B] last:font-semibold ">New Course</a>
+                    <a href="#" class="text-[#7F8190] last:text-[#0A090B] last:font-semibold ">Edit Course</a>
                 </div>
             </div>
             <div class="header flex flex-col gap-1 px-5 mt-5">
-                <h1 class="font-extrabold text-[30px] leading-[45px]">New Course</h1>
+                <h1 class="font-extrabold text-[30px] leading-[45px]">Edit Course</h1>
                 <p class="text-[#7F8190]">Provide high quality for best students</p>
             </div>
 
