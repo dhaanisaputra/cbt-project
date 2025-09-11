@@ -16,7 +16,7 @@
             class="w-[270px] flex flex-col shrink-0 min-h-screen justify-between p-[30px] border-r border-[#EEEEEE] bg-[#FBFBFB]">
             <div class="w-full flex flex-col gap-[30px]">
                 <a href="index.html" class="flex items-center justify-center">
-                    <img src="{{asset('images/logo/logo.svg')}}" alt="logo">
+                    <img src="{{asset('images/logo/mds-circle-logo.png')}}" alt="logo">
                 </a>
                 <ul class="flex flex-col gap-3">
                     <li>
@@ -125,7 +125,7 @@
                     </li>
                 </ul>
             </div>
-            <a href="">
+            {{-- <a href="">
                 <div class="w-full flex gap-3 items-center p-4 rounded-[14px] bg-[#0A090B] mt-[30px]">
                     <div>
                         <img src="{{asset('images/icons/crown-round-bg.svg')}}" alt="icon">
@@ -135,7 +135,7 @@
                         <p class="text-sm leading-[21px] text-[#A0A0A0]">Unlock features</p>
                     </div>
                 </div>
-            </a>
+            </a> --}}
         </div>
         <div id="menu-content" class="flex flex-col w-full pb-[30px]">
             <div class="nav flex justify-between p-5 border-b border-[#EEEEEE]">
@@ -162,7 +162,7 @@
                     <div class="h-[46px] w-[1px] flex shrink-0 border border-[#EEEEEE]"></div>
                     <div class="flex gap-3 items-center">
                         <div class="flex flex-col text-right">
-                            <p class="text-sm text-[#7F8190]">Howdy</p>
+                            <p class="text-sm text-[#7F8190]">Welcome</p>
                             <p class="font-semibold">{{Auth::user()->name}}</p>
                         </div>
                         <div class="w-[46px] h-[46px]">

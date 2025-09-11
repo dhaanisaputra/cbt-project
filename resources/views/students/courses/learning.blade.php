@@ -22,7 +22,7 @@
                 </div>
                 <div class="flex gap-3 items-center">
                     <div class="flex flex-col text-right">
-                        <p class="text-sm text-[#7F8190]">Howdy</p>
+                        <p class="text-sm text-[#7F8190]">Welcome</p>
                         <p class="font-semibold">{{Auth::user()->name}}</p>
                     </div>
                     <div class="w-[46px] h-[46px]">
