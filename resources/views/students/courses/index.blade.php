@@ -187,9 +187,12 @@
                             <p class="p-[8px_16px] rounded-full bg-[#EAE8FE] font-bold text-sm text-[#6436F1]">{{$course->category->name}}</p>
                         </div>
                     @endif
-
                     <div class="flex shrink-0 w-[120px] items-center">
-                        <a href="learning.html" class="w-full h-[41px] p-[10px_20px] bg-[#6436F1] rounded-full font-bold text-sm text-white transition-all duration-300 hover:shadow-[0_4px_15px_0_#6436F14D] text-center">Start Test</a>
+                        @if ($course->nextQuestionId !== null)
+                            <a href="{{route('dashboard.learning.course', ['course' => $course->id, 'question' => $course->nextQuestionId])}}" class="w-full h-[41px] p-[10px_20px] bg-[#6436F1] rounded-full font-bold text-sm text-white transition-all duration-300 hover:shadow-[0_4px_15px_0_#6436F14D] text-center">Start Test</a>
+                        @else
+                            <a href="#" class="w-full h-[41px] p-[10px_20px] bg-indigo-950 rounded-full font-bold text-sm text-white transition-all duration-300 hover:shadow-[0_4px_15px_0_#6436F14D] text-center">Results</a>
+                        @endif
                     </div>
                 </div>
                 @empty
