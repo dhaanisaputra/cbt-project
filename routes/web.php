@@ -9,8 +9,11 @@ use App\Http\Controllers\LearningController;
 use App\Http\Controllers\StudentAnswerController;
 use Spatie\Permission\Contracts\Role;
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Route::get('/dashboard', function () {

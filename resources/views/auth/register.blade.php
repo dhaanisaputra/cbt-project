@@ -12,7 +12,7 @@
         <nav class="flex items-center px-[50px] pt-[30px] w-full absolute top-0">
             <div class="flex items-center">
                 <a href="index.html">
-                    <img src="{{asset('images/logo/mds-circle-logo.png')}}" alt="logo" class="w-[100px] h-[100px]">
+                    <img src="{{asset('images/logo/mds-circle-logo.png')}}" alt="logo" class="w-[100px] h-[100px] object-contain">
                 </a>
             </div>
             <div class="flex items-center justify-end w-full">
@@ -27,7 +27,7 @@
                         <a href="" class="font-semibold text-white">Help</a>
                     </li>
                     <li class="h-[52px] flex items-center">
-                        <a href="signin.html" class="font-semibold text-white p-[14px_30px] bg-[#0A090B] rounded-full text-center">Sign In</a>
+                        <a href="{{route('login')}}" class="font-semibold text-white p-[14px_30px] bg-[#0A090B] rounded-full text-center">Sign In</a>
                     </li>
                 </ul>
             </div>
@@ -80,7 +80,7 @@
         <div class="right-side min-h-screen flex flex-col w-[650px] shrink-0 pb-[30px] pt-[82px] bg-[#6436F1]">
             <div class="h-full w-full flex flex-col items-center justify-center pt-[66px] gap-[100px]">
                 <div class="w-[500px] h-[360px] flex shrink-0 overflow-hidden">
-                    <img src="{{asset('images/thumbnail/sign-in-illustration.png')}}" class="w-full h-full object-contain" alt="banner">
+                    <img src="{{asset('images/thumbnail/SS-interface.png')}}" class="w-full h-full object-contain" alt="banner">
                 </div>
                 <div class="logos w-full overflow-hidden">
                     <div class="group/slider flex flex-nowrap w-max items-center">

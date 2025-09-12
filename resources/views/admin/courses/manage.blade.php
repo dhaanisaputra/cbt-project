@@ -11,8 +11,8 @@
     <section id="content" class="flex">
         <div id="sidebar" class="w-[270px] flex flex-col shrink-0 min-h-screen justify-between p-[30px] border-r border-[#EEEEEE] bg-[#FBFBFB]">
             <div class="w-full flex flex-col gap-[30px]">
-                <a href="index.html" class="flex items-center justify-center">
-                    <img src="{{asset('images/logo/mds-circle-logo.png')}}" alt="logo">
+                <a href="{{route('dashboard.courses.index')}}" class="flex items-center justify-center">
+                    <img src="{{asset('images/logo/mds-circle-logo.png')}}" alt="logo" class="object-contain">
                 </a>
                 <ul class="flex flex-col gap-3">
                     <li>
