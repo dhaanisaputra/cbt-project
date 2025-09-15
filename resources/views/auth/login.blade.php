@@ -11,7 +11,7 @@
 </head>
 
 <body class="font-poppins text-[#0A090B]">
-    <section id="signup" class="flex w-full min-h-[832px]">
+    <section id="signup" class="flex flex-col md:flex-row w-full h-screen overflow-hidden">
         <nav class="flex items-center px-[50px] pt-[30px] w-full absolute top-0">
             <div class="flex items-center">
                 <a href="index.html">
@@ -37,9 +37,9 @@
                 </ul>
             </div>
         </nav>
-        <div class="left-side min-h-screen flex flex-col w-full pb-[30px] pt-[82px]">
+        <div class="left-side h-full flex flex-col w-full md:w-full lg:w-full xl:w-full pt-[82px] pb-[30px] px-6 md:px-[50px] bg-white">
             <div class="h-full w-full flex items-center justify-center">
-                <form method="POST" action="{{ route('login') }}" class="flex flex-col gap-[30px] w-[450px] shrink-0">
+                <form method="POST" action="{{ route('login') }}" class="flex flex-col gap-[30px] w-full max-w-[450px]">
                     @csrf
                     <h1 class="font-bold text-2xl leading-9">Sign In</h1>
                     <div class="flex flex-col gap-2">
@@ -72,10 +72,10 @@
                 </form>
             </div>
         </div>
-        <div class="right-side min-h-screen flex flex-col w-[650px] shrink-0 pb-[30px] pt-[82px] bg-[#6436F1]">
-            <div class="h-full w-full flex flex-col items-center justify-center pt-[66px] gap-[100px]">
-                <div class="w-[500px] h-[360px] flex shrink-0 overflow-hidden">
-                    <img src="{{asset('images/thumbnail/SS-interface.png')}}" class="w-full h-full object-contain"
+        <div class="right-side hidden md:flex h-full flex-col w-full md:w-[650px] shrink-0 pt-[82px] pb-[30px] bg-[#6436F1]">
+            <div class="h-full w-full flex flex-col items-center justify-center pt-[30px] gap-[50px]">
+                <div class="w-[90%] max-w-[500px] flex shrink-0">
+                    <img src="{{asset('images/thumbnail/Mockup2.png')}}" class="w-full h-[490px] object-contain"
                         alt="banner">
                 </div>
                 <div class="logos w-full overflow-hidden">
